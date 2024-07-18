@@ -5,6 +5,9 @@
 **English** | [简体中文](README_CN.md)  
 **Warning:Some Language transalte by ChatGPT.**
 ***
+What is the purpose of this fork?  
+See this: [Note](Note.md)  
+***
 > ### :warning: This tool is experimental. Be careful of data loss and *always* make a backup. :warning:
 
 Fixes the bug which forces a player to create a new character when they already have a save.
