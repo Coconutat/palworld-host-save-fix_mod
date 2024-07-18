@@ -1,5 +1,10 @@
 # Palworld Host Save Fix
 
+***
+# Language:  
+**English** | [简体中文](README_CN.md)  
+**Warning:Some Language transalte by ChatGPT.**
+***
 > ### :warning: This tool is experimental. Be careful of data loss and *always* make a backup. :warning:
 
 Fixes the bug which forces a player to create a new character when they already have a save.
@@ -8,18 +13,23 @@ Fixes the bug which forces a player to create a new character when they already 
 
 ## Table of Contents
 
-- [Abstract](#abstract)
-- [Usage](#usage)
-- [Migration Examples](#migration-examples)
-  - [How to migrate a co-op save to a Windows dedicated server](#how-to-migrate-a-co-op-save-to-a-windows-dedicated-server)
-  - [How to migrate a Windows/Linux dedicated server save to a Linux/Windows dedicated server](#how-to-migrate-a-windowslinux-dedicated-server-save-to-a-linuxwindows-dedicated-server)
-  - [How to migrate a Windows dedicated server save to co-op](#how-to-migrate-a-windows-dedicated-server-save-to-co-op)
-- [Finding Player GUIDs](#finding-player-guids)
-- [Known bugs](#known-bugs)
-  - [\[Guild bug\]](#guild-bug)
-  - [\[Pal bug\]](#pal-bug)
-  - [\[Viewing Cage bug\]](#viewing-cage-bug)
-  - [\[Left Click bug\]](#left-click-bug)
+- [Palworld Host Save Fix](#palworld-host-save-fix)
+- [Language:](#language)
+  - [Table of Contents](#table-of-contents)
+  - [Abstract](#abstract)
+  - [Usage](#usage)
+  - [Migration Examples](#migration-examples)
+    - [How to migrate a co-op save to a Windows dedicated server](#how-to-migrate-a-co-op-save-to-a-windows-dedicated-server)
+    - [How to migrate a Windows/Linux dedicated server save to a Linux/Windows dedicated server](#how-to-migrate-a-windowslinux-dedicated-server-save-to-a-linuxwindows-dedicated-server)
+    - [How to migrate a Windows dedicated server save to co-op](#how-to-migrate-a-windows-dedicated-server-save-to-co-op)
+  - [Finding Player GUIDs](#finding-player-guids)
+  - [Known bugs](#known-bugs)
+    - [\[Guild bug\]](#guild-bug)
+    - [\[Pal bug\]](#pal-bug)
+    - [\[Viewing Cage bug\]](#viewing-cage-bug)
+    - [\[Left Click bug\]](#left-click-bug)
+    - [Credit to cheahjs for his very useful script helping me to make this fix!](#credit-to-cheahjs-for-his-very-useful-script-helping-me-to-make-this-fix)
+    - [Appreciate any help testing and resolving bugs.](#appreciate-any-help-testing-and-resolving-bugs)
 
 ## Abstract 
 
@@ -40,7 +50,8 @@ To fix this bug, we've made a script that takes the GUID of the player on the ne
 
 Dependencies:
 - Python >=3.10
-- Install [Palworld Save Tools v0.17.1](https://github.com/cheahjs/palworld-save-tools) with `python -m pip install palworld-save-tools==0.17.1`
+- Install [Palworld Save Tools v0.23.1](https://github.com/cheahjs/palworld-save-tools) with `python -m pip install palworld-save-tools==0.23.1`
+- ~~Install [Palworld Save Tools v0.17.1](https://github.com/cheahjs/palworld-save-tools) with `python -m pip install palworld-save-tools==0.17.1`~~
 - Clone the repository with `git clone https://github.com/xNul/palworld-host-save-fix`
 
 Using the GUI:
