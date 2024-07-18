@@ -6,7 +6,8 @@ import zlib
 
 from palworld_save_tools.gvas import GvasFile
 from palworld_save_tools.palsav import compress_gvas_to_sav, decompress_sav_to_gvas
-from palworld_save_tools.paltypes import PALWORLD_CUSTOM_PROPERTIES, PALWORLD_TYPE_HINTS
+# from palworld_save_tools.paltypes import PALWORLD_CUSTOM_PROPERTIES, PALWORLD_TYPE_HINTS
+from palworld_save_tools.paltypes import PALWORLD_CUSTOM_PROPERTIES, PALWORLD_TYPE_HINTS, DISABLED_PROPERTIES
 
 def main():
     if len(sys.argv) < 5:
@@ -122,6 +123,7 @@ of your save folder before continuing. Press enter if you would like to continue
     os.rename(old_sav_path, new_sav_path)
     print('Fix has been applied! Have fun!')
 
+'''
 def sav_to_json(filepath):
     print(f'Converting {filepath} to JSON...', end='', flush=True)
     with open(filepath, 'rb') as f:
@@ -129,6 +131,20 @@ def sav_to_json(filepath):
         raw_gvas, _ = decompress_sav_to_gvas(data)
     gvas_file = GvasFile.read(
         raw_gvas, PALWORLD_TYPE_HINTS, PALWORLD_CUSTOM_PROPERTIES, allow_nan=True
+    )
+    json_data = gvas_file.dump()
+    print('Done!', flush=True)
+    return json_data
+'''
+# Fix by wrlcke (https://github.com/wrlcke)
+def sav_to_json(filepath):
+    print(f'Converting {filepath} to JSON...', end='', flush=True)
+    with open(filepath, 'rb') as f:
+        data = f.read()
+        raw_gvas, _ = decompress_sav_to_gvas(data)     
+    custom_properties = {prop: PALWORLD_CUSTOM_PROPERTIES[prop] for prop in set(PALWORLD_CUSTOM_PROPERTIES) - DISABLED_PROPERTIES}
+    gvas_file = GvasFile.read(
+        raw_gvas, PALWORLD_TYPE_HINTS, custom_properties, allow_nan=True
     )
     json_data = gvas_file.dump()
     print('Done!', flush=True)
